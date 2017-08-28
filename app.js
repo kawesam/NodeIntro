@@ -16,7 +16,7 @@ moongose.Promise = global.Promise;
 moongose.connect(config.database);
 
 app.use(bodyPaser.json());
-app.use(bodyPaser.urlencoded({extended:false}));
+app.use(bodyPaser.urlencoded({extended:true}));
 
 app.use(morgan('dev'));
 
@@ -29,7 +29,7 @@ app.get('/', function (req, res) {
 })
 
 //add a prefix on api to our routes
-app.use('api',routes.setup(router));
+app.use('/api',routes.setup(router));
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
