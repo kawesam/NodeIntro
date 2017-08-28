@@ -1,0 +1,15 @@
+{
+  "name": "nodeintro",
+  "version": "1.0.0",
+  "description": "test sms integration in twillio and nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongoose": "^4.11.8"
+  }
+}
