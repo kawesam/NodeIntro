@@ -5,7 +5,8 @@ var moongose = require('mongoose')
     ,bodyPaser = require('body-parser')
     ,morgan = require('morgan');
 
-
+app.use(bodyPaser.json());
+app.use(bodyPaser.urlencoded({extended:true}));
 
 
 var config = require('./config');
@@ -14,9 +15,6 @@ var routes = require('./server/controllers/routes');
 var router = express.Router();
 moongose.Promise = global.Promise;
 moongose.connect(config.database);
-
-app.use(bodyPaser.json());
-app.use(bodyPaser.urlencoded({extended:true}));
 
 app.use(morgan('dev'));
 

@@ -5,9 +5,7 @@ var config = require('../../config.js');
 //function to add a new user
 module.exports.addUser = function (req,res) {
 
-    //res.json({:true});
     var requestBody = req.body();
-
     var newUser = new User({
         firstname : requestBody.firstname,
         lastname  : requestBody.lastname,
