@@ -20,6 +20,7 @@ module.exports.addUser = function (req,res) {
     });
 
 };
+//get all records
 
 module.exports.getUsers = function (req,res) {
     User.find(function (error,users) {
@@ -31,4 +32,17 @@ module.exports.getUsers = function (req,res) {
     //res.json({success:true,message : "found users"});
 
 };
+
+//delete a single record by id
+module.exports.deleteUser = function (req,res) {
+    var rp = req.params;
+    User.remove({ _id: rp._id},function (error, result) {
+        if(error) throw error;
+        console.log("Successfully deleted a user");
+        res.json({success:true});
+
+    });
+
+};
+
 

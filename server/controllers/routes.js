@@ -7,6 +7,8 @@ module.exports.setup = function (router) {
 
     router.get('/users',userCntrl.getUsers);
 
+    router.get('/users/delete/:id',userCntrl.delete);
+
     return router;
 
 };
