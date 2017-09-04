@@ -16,6 +16,8 @@ var router = express.Router();
 moongose.Promise = global.Promise;
 moongose.connect(config.database);
 
+app.set('appSecret', config.secret); // secret variable
+
 app.use(morgan('dev'));
 
 app.use(morgan('combined'))
